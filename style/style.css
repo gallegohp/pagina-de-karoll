@@ -14,7 +14,7 @@ body {
 
 header {
   display: flex;
-  background-image: url(../assets/ceratiportada.jpg);
+  background-image: url(./assets/ceratiportada.jpg);
   background-position: center;
   background-size: cover;
   justify-content: center;
@@ -134,6 +134,77 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.momentos {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.momentos h2 {
+  font-size: 2.8rem;
+  color: #da0170;
+  margin-bottom: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.persona {
+  margin-bottom: 60px;
+}
+
+.persona h3 {
+  font-size: 2rem;
+  color: #6b3e26;
+  margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mensaje-persona {
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fotos-persona {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.fotos-persona img {
+  width: 280px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.fotos-persona img:hover {
+  transform: scale(1.05);
+}
+@media screen and (max-width: 768px) {
+  .momentos h2 {
+    font-size: 2rem;
+  }
+
+  .persona h3 {
+    font-size: 1.6rem;
+  }
+
+  .mensaje-persona {
+    font-size: 1.1rem;
+  }
+
+  .fotos-persona img {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
 /* Responsive para pantallas medianas y pequeñas */
 @media screen and (max-width: 1024px) {
   .bannerInicio {
@@ -203,4 +274,74 @@ main {
   .firma {
     font-size: 18px;
   }
+}.persona {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  margin-bottom: 60px;
+}
+
+.persona.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fotos-persona {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.fotos-persona img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.fotos-persona img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-contenido {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar:hover {
+  color: #ff4c4c;
 }

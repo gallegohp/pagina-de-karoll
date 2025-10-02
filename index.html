@@ -10,14 +10,13 @@
 <body>
   <div class="container">
     <header>
-      <section>
-        <div class="bannerInicio">
-          <p>18 Year Old</p>
-        </div>
-      </section>
+      <div class="bannerInicio">
+        <p>18 Year Old</p>
+      </div>
     </header>
 
     <main>
+      <!-- Introducción -->
       <section>
         <div class="contenedor">
           <div class="contenedor-texto">
@@ -51,10 +50,64 @@
           <img class="foto" src="assets/los2.jpg" alt="Foto especial">
         </div>
       </section>
+
+      <!-- Sección de momentos -->
+      <section class="momentos">
+        <h2>Estos son los mejores momentos con las personas que más te aman.</h2>
+
+        <article class="persona">
+          <h3>Mariana</h3>
+          <p class="mensaje-persona">
+            “Karoll, gracias por ser esa amiga que siempre está. Tus 18 son solo el comienzo de todo lo increíble que te espera. Te admiro y te quiero muchísimo.”
+          </p>
+          <div class="fotos-persona">
+            <img src="assets/fotosMariana/foto1.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto2.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto3.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto4.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto5.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto6.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto7.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto8.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto9.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+            <img src="assets/fotosMariana/foto10.jpg" alt="Foto de Mariana" onclick="abrirModal(this)">
+          </div>
+        </article>
+
+        <article class="persona">
+          <h3>Mamá</h3>
+          <p class="mensaje-persona">
+            “Mi niña hermosa, verte cumplir 18 me llena de orgullo. Siempre estaré aquí para ti, apoyándote, guiándote y amándote con todo mi corazón.”
+          </p>
+          <div class="fotos-persona">
+            <img src="assets/mama1.jpg" alt="Mamá y Karoll 1" onclick="abrirModal(this)">
+            <img src="assets/mama2.jpg" alt="Mamá y Karoll 2" onclick="abrirModal(this)">
+          </div>
+        </article>
+
+        <article class="persona">
+          <h3>Papá</h3>
+          <p class="mensaje-persona">
+            “Eres mi mayor tesoro. Que tus 18 años estén llenos de sueños cumplidos, decisiones sabias y mucho amor. Siempre serás mi niña.”
+          </p>
+          <div class="fotos-persona">
+            <img src="assets/papa1.jpg" alt="Papá y Karoll 1" onclick="abrirModal(this)">
+            <img src="assets/papa2.jpg" alt="Papá y Karoll 2" onclick="abrirModal(this)">
+          </div>
+        </article>
+      </section>
     </main>
   </div>
 
+  <!-- Modal para ampliar imágenes -->
+  <div id="modalImagen" class="modal">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <img class="modal-contenido" id="imagenAmpliada">
+  </div>
+
+  <!-- Scripts -->
   <script>
+    // Animaciones al hacer scroll
     window.addEventListener('scroll', function() {
       const carta = document.getElementById('carta');
       const cartaTop = carta.getBoundingClientRect().top;
@@ -62,7 +115,34 @@
       if (cartaTop < windowHeight - 100) {
         carta.classList.add('visible');
       }
+
+      const personas = document.querySelectorAll('.persona');
+      personas.forEach(persona => {
+        const top = persona.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          persona.classList.add('visible');
+        }
+      });
     });
+
+    // Modal de imagen
+    function abrirModal(img) {
+      const modal = document.getElementById("modalImagen");
+      const imagenAmpliada = document.getElementById("imagenAmpliada");
+      imagenAmpliada.src = img.src;
+      modal.style.display = "block";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalImagen").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalImagen");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 </body>
 </html>
