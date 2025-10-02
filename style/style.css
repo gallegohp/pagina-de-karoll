@@ -1,0 +1,206 @@
+body {
+  background: rgb(255, 255, 255);
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(240, 240, 240);
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  display: flex;
+  background-image: url(../assets/ceratiportada.jpg);
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bannerInicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.contenedor-texto {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+}
+
+.highlight {
+  font-size: 4rem;
+  background: linear-gradient(to right,#fa4a54, #da0170);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contenedor-texto h1 {
+  font-size: 4rem;
+}
+
+.contenedor-texto p {
+  font-size: 1.5rem;
+}
+
+.contenedor-texto button {
+  font-size: 1.5rem;
+  padding: 20px 50px;
+  border: none;
+  background: #fd4c5c;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.contenedor-imagen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.carta-container {
+  max-width: 800px;
+  padding: 40px;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  margin: 60px auto;
+}
+
+.carta-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carta-texto {
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  color: #6b3e26;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.firma {
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+}
+
+.foto {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* Responsive para pantallas medianas y pequeñas */
+@media screen and (max-width: 1024px) {
+  .bannerInicio {
+    font-size: 8rem;
+  }
+
+  .contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenedor-texto,
+  .contenedor-imagen {
+    width: 90%;
+    align-items: center;
+  }
+
+  .contenedor-texto h1 {
+    font-size: 3rem;
+  }
+
+  .contenedor-texto p {
+    font-size: 1.3rem;
+  }
+
+  .contenedor-texto button {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+  }
+
+  .carta-texto {
+    font-size: 24px;
+  }
+
+  .firma {
+    font-size: 20px;
+  }
+
+  .foto {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bannerInicio {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .contenedor-texto h1 {
+    font-size: 2.5rem;
+  }
+
+  .contenedor-texto p {
+    font-size: 1.1rem;
+  }
+
+  .contenedor-texto button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+
+  .carta-texto {
+    font-size: 20px;
+  }
+
+  .firma {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de cumpleaños</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <section>
+        <div class="bannerInicio">
+          <p>18 Year Old</p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section>
+        <div class="contenedor">
+          <div class="contenedor-texto">
+            <h1><span class="highlight">TUS 18</span><br>AMOR <br> FELICIDAD.</h1>
+            <p>Hoy comienza una nueva etapa, llena de sueños, decisiones y aventuras. Esta página es un regalo para ti, para celebrar no solo tu cumpleaños, sino todo lo que eres: tu risa, tu fuerza, tu ternura y tu forma única de ver el mundo.<br><br>
+            Cada palabra aquí está escrita con amor, porque cumplir 18 no es solo soplar velas: es abrir puertas, mirar hacia adelante y saber que tienes a alguien que te admira profundamente.</p>
+            <button onclick="document.getElementById('carta').scrollIntoView({ behavior: 'smooth' })">GO THERE</button>
+          </div>
+          <div class="contenedor-imagen">
+            <img src="assets/karoll silla.jpg" alt="Foto especial">
+          </div>
+        </div>
+      </section>
+
+      <!-- Carta romántica -->
+      <section>
+        <div class="carta-container" id="carta">
+          <div class="carta-texto">
+            Hoy cumples 18, y aunque el mundo lo vea como “la mayoría de edad”, para mí es mucho más que eso.  
+            Es el inicio de una etapa en la que vas a descubrir nuevas versiones de ti misma, y yo tengo el privilegio de acompañarte en ese viaje.  
+            <br><br>
+            Desde que te conocí, he aprendido que la dulzura puede tener carácter, que la risa puede sanar, y que el amor —cuando es sincero— se siente como hogar. Tú eres todo eso. Eres fuerza, eres ternura, eres luz.  
+            <br><br>
+            Me encanta cómo miras el mundo, cómo te emocionas con lo simple, cómo defiendes lo que amas. Y hoy, más que nunca, quiero que sepas que estoy aquí para celebrar cada paso que des, cada sueño que persigas, cada meta que alcances.  
+            <br><br>
+            Esta página es solo un reflejo de lo que siento por ti. No hay código ni diseño que alcance a mostrar lo mucho que significas para mí, pero quería intentarlo. Porque tú mereces detalles, palabras, gestos… y todo lo que haga que este día sea inolvidable.  
+            <br><br>
+            Feliz cumpleaños, mi amor. Que tus 18 sean el comienzo de todo lo que has soñado. Y que nunca te falte alguien que te recuerde lo increíble que eres.
+          </div>
+          <div class="firma">Con todo mi corazón,<br><strong>Camilo</strong></div>
+          <img class="foto" src="assets/los2.jpg" alt="Foto especial">
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const carta = document.getElementById('carta');
+      const cartaTop = carta.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (cartaTop < windowHeight - 100) {
+        carta.classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>
