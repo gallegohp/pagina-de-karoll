@@ -14,7 +14,7 @@ body {
 
 header {
   display: flex;
-  background-image: url(./assets/ceratiportada.jpg);
+  background-image: url(../assets/ceratiportada.jpg);
   background-position: center;
   background-size: cover;
   justify-content: center;
@@ -141,7 +141,17 @@ main {
   text-align: center;
   padding: 0 20px;
 }
-
+.mensaje-intro-momentos {
+  font-size: 1.4rem;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+}
 .momentos h2 {
   font-size: 2.8rem;
   color: #da0170;
